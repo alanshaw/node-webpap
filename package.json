@@ -1,7 +1,7 @@
 {
   "name": "webpap",
   "version": "0.0.0",
-  "description": "",
+  "description": "Take multiple pictures of a web page via the well known \"say cheese\", \"cheeeese\" retoric. i.e. ask to take a picture, webpage signals when it's ready, picture is taken.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
