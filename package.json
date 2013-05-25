@@ -1,0 +1,23 @@
+{
+  "name": "webpap",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:alanshaw/node-webpap.git"
+  },
+  "keywords": [
+    "screenshot",
+    "screengrab",
+    "capture"
+  ],
+  "author": "Alan Shaw",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alanshaw/node-webpap/issues"
+  }
+}
