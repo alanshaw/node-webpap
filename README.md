@@ -21,6 +21,9 @@ webpap.createShoot("http://localhost/index.html", function(err, shoot) {
 
   shoot.take({foo: "bar"}, function(err, imgPath) {
     // ...
+    
+    // Always call halt to quit the phantom process
+    shoot.halt();
   });
   
 });
