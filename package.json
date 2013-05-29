@@ -4,7 +4,7 @@
   "description": "Take multiple pictures of a web page via the well known \"say cheese\", \"cheeeese\" retoric. i.e. ask to take a picture, webpage signals when it's ready, picture is taken.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,8 @@
     "phantomjs": "~1.9.0-4",
     "tmp": "0.0.18",
     "async": "~0.2.8"
+  },
+  "devDependencies": {
+    "mocha": "~1.10.0"
   }
 }
