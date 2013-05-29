@@ -19,7 +19,7 @@ var webpap = require("webpap");
 
 webpap.createShoot("http://localhost/index.html", function(err, shoot) {
 
-  shoot.take({foo: "bar"}, function(err, imgPath) {
+  shoot.take({foo: "bar"}, function(err, tmpImgPath) {
     // ...
     
     // Always call halt to quit the phantom process
