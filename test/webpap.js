@@ -29,7 +29,7 @@ describe("webpap", function () {
           img.decode(function (pixels) {
             assert.notEqual(pixels.length, 0)
             cb(null, pixels)
-          });
+          })
         }
       }
       
@@ -49,8 +49,30 @@ describe("webpap", function () {
           assert.ifError(er)
           done()
         })
+      })
+    })
+  })
+  
+  it("should successfully take a photo if autoCheese is enabled and webpage has no callback code", function (done) {
+    this.timeout(10000)
+    
+    webpap.createShoot("file://" + __dirname + "/fixtures/auto-cheese.html", {autoCheese: true}, function (er, shoot) {
+      assert.ifError(er)
+      
+      shoot.take({width: 128, height: 100}, function (er, tmpImgPath) {
+        assert.ifError(er)
         
-        done()
+        // Make sure an image was created
+        var img = PNG.load(tmpImgPath)
+        
+        assert.equal(img.width, 128)
+        assert.equal(img.height, 100)
+        
+        // Check valid PNG and non zero length
+        img.decode(function (pixels) {
+          assert.notEqual(pixels.length, 0)
+          done()
+        })
       })
     })
   })

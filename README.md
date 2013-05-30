@@ -89,6 +89,12 @@ Default value: `{}`
 
 Object with key value pairs corresponding to phantomjs [command line options](https://github.com/ariya/phantomjs/wiki/API-Reference#command-line-options)
 
+### autoCheese
+Type: `Boolean`
+Default value: `false`
+
+Automatically inject JavaScript into the page that immediately calls back to phantom when the HTML5 message is received.
+
 Photo options
 ---
 
