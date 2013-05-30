@@ -26,6 +26,7 @@
     "async": "~0.2.8"
   },
   "devDependencies": {
-    "mocha": "~1.10.0"
+    "mocha": "~1.10.0",
+    "png-js": "~0.1.1"
   }
 }
