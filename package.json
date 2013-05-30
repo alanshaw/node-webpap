@@ -1,6 +1,6 @@
 {
   "name": "webpap",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Take multiple pictures of a web page via the well known \"say cheese\", \"cheeeese\" retoric. i.e. ask to take a picture, webpage signals when it's ready, picture is taken.",
   "main": "index.js",
   "scripts": {
