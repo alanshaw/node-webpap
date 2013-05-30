@@ -1,4 +1,4 @@
-node-webpap [![Dependency Status](https://david-dm.org/alanshaw/node-webpap.png)](https://david-dm.org/alanshaw/node-webpap) [![Build Status](https://travis-ci.org/alanshaw/node-webpap.png?branch=master)](https://travis-ci.org/alanshaw/node-webpap)
+node-webpap [![Dependency Status](https://david-dm.org/alanshaw/node-webpap.png)](https://david-dm.org/alanshaw/node-webpap) [![Build Status](https://travis-ci.org/alanshaw/node-webpap.png?branch=master)](https://travis-ci.org/alanshaw/node-webpap) [![Coverage Status](https://coveralls.io/repos/alanshaw/node-webpap/badge.png)](https://coveralls.io/r/alanshaw/node-webpap)
 ===
 
 Take _multiple_ pictures of a web page via the well known "say cheese", "cheeeese" retoric. i.e. ask to take a picture, webpage signals when it's ready, picture is taken.
