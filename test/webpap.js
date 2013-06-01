@@ -3,6 +3,7 @@ var assert = require("assert")
   , async = require("async")
   , fs = require("fs")
   , PNG = require("png-js")
+  , childProcess = require("child_process")
 
 describe("webpap", function () {
   
@@ -47,11 +48,49 @@ describe("webpap", function () {
           , validateTask(tmpImgPaths[1], 200, 256)
         ], function (er) {
           assert.ifError(er)
+          shoot.halt()
           done()
         })
-        
-        done()
       })
+    })
+  })
+  
+  it("should pass config params to phantomjs", function (done) {
+    this.timeout(5000)
+    
+    var spawn = childProcess.spawn
+    
+    // When a child process is spawned, attach args to the resulting object
+    childProcess.spawn = function () {
+      var proc = spawn.apply(childProcess, arguments)
+      proc.spawnArgs = [].slice.call(arguments)
+      return proc
+    }
+    
+    // Pass in phantom config
+    var shootOpts = {
+      phantomConfig: {
+          "disk-cache": true
+        , "web-security": false
+      }
+    }
+    
+    webpap.createShoot("file://" + __dirname + "/fixtures/basic.html", shootOpts, function (er, shoot) {
+      assert.ifError(er)
+      
+      assert(shoot.phantomProcess.spawnArgs)
+      
+      // Spawn args should have two items: command, args
+      assert.equal(shoot.phantomProcess.spawnArgs.length, 2)
+      
+      // Check our args were passed to the process
+      assert.notEqual(shoot.phantomProcess.spawnArgs[1].indexOf("--disk-cache=true"), -1)
+      assert.notEqual(shoot.phantomProcess.spawnArgs[1].indexOf("--web-security=false"), -1)
+      
+      // Tear down
+      childProcess.spawn = spawn
+      shoot.halt()
+      done()
     })
   })
   
