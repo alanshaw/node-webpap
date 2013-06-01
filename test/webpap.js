@@ -51,8 +51,6 @@ describe("webpap", function () {
           shoot.halt()
           done()
         })
-<<<<<<< HEAD
-=======
       })
     })
   })
@@ -77,7 +75,6 @@ describe("webpap", function () {
           assert.notEqual(pixels.length, 0)
           done()
         })
->>>>>>> e21b71117410bdf84a2199ac649750d3ff53b6ed
       })
     })
   })
