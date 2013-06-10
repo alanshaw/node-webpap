@@ -118,4 +118,22 @@ describe("webpap", function () {
     })
   })
   
+  it("should allow one off create shoot and take shot via convenience function", function (done) {
+    webpap("file://" + __dirname + "/fixtures/basic.html", {}, {width: 138, height: 138}, function (er, tmpImgPath) {
+      assert.ifError(er)
+      
+      // Make sure an image was created
+      var img = PNG.load(tmpImgPath)
+      
+      assert.equal(img.width, 138)
+      assert.equal(img.height, 138)
+      
+      // Check valid PNG and non zero length
+      img.decode(function (pixels) {
+        assert.notEqual(pixels.length, 0)
+        done()
+      })
+    })
+  })
+  
 })
