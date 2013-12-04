@@ -32,7 +32,9 @@ webpap.createShoot("http://localhost/index.html", {/* shoot options */}, functio
     });
     
     // ALWAYS call halt when done with the shoot
-    shoot.halt();
+    shoot.halt(function () {
+      // phantom process now killed
+    });
   });
   
   // ...successive calls to Shoot#take
